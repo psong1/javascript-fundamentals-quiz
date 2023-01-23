@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Jura&family=Poppins&display=swap" rel="stylesheet">
+    <title>Code Quiz</title>
+</head>
+
+<body>
+    <header>
+        <div id="score-keeper">View Highscores</div>
+
+        <div id="timer">Time: </div>
+        <div id="score">Score: </div>
+    </header>
+
+    <div id="intro" class="intro-screen">
+        <h1>Welcome to the Code Quiz!</h1>
+        <p>Ready to test your coding knowledge? Press START to begin the quiz, and answer as many questions as possible. Correct answers will award ONE point and incorrect answers
+            will deduct 10 seconds from the timer.
+        </p>
+        <button id="start">START</button>
+    </div>
+
+    <div id="question-answer">
+        <h2 id="question"></h2>
+        <div id="answers"></div>
+    </div>
+
+    <div id="finish" class="hide">
+        <h2>Time's Up!</h2>
+        <div id="final"></div>
+        <div id="initials">
+            <button id="submit">SUBMIT</button>
+        </div>
+    </div>
+
+    <script src="./Assets/js/script.js"></script>
+</body>
+
+</html>
