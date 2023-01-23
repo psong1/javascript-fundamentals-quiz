@@ -1,19 +1,40 @@
-var questionsEl = document.querySelector("#questions");
-var timerEl = document.querySelector("#time");
-var choicesEl = document.querySelector("#choices");
-var submitBtn = document.querySelector("#submit");
-var startBtn = document.querySelector("#start");
-var initialsEl = document.querySelector("#initials");
-var feedbackEl = document.querySelector("#feedback");
+let questionsEl = document.querySelector("#questions");
+let timerEl = document.querySelector("#time");
+let choicesEl = document.querySelector("#choices");
+let submitBtn = document.querySelector("#submit");
+let startBtn = document.querySelector("#start");
+let initialsEl = document.querySelector("#initials");
+let feedbackEl = document.querySelector("#feedback");
+
+let questions = [
+  {
+      title: 'How many day are there in a year?',
+      choices: ['24', '365', '52', '12'],
+      answer: '365'
+  },
+
+  {
+      title: 'What is the capital of Georgia?',
+      choices: ['Atlanta', 'Macon', 'Miami', 'Seattle'],
+      answer: 'Atlanta'
+  },
+
+  {
+      title: 'test question',
+      choices: ['a', 'b', 'c', 'd'],
+      answer: 'a' 
+  }
+]
 
 // quiz state variables
-var currentQuestionIndex = 0;
-var time = questions.length * 15;
-var timerId;
+let currentQuestionIndex = 0;
+let time = questions.length * 15;
+let timerId;
+let score = 0;
 
 function startQuiz() {
   // hide start screen
-  var startScreenEl = document.getElementById("start-screen");
+  let startScreenEl = document.getElementById("start-screen");
   startScreenEl.setAttribute("class", "hide");
 
   // un-hide questions section
@@ -30,10 +51,10 @@ function startQuiz() {
 
 function getQuestion() {
   // get current question object from array
-  var currentQuestion = questions[currentQuestionIndex];
+  let currentQuestion = questions[currentQuestionIndex];
 
   // update title with current question
-  var titleEl = document.getElementById("question-title");
+  let titleEl = document.getElementById("question-title");
   titleEl.textContent = currentQuestion.title;
 
   // clear out any old question choices
@@ -42,7 +63,7 @@ function getQuestion() {
   // loop over choices
   currentQuestion.choices.forEach(function(choice, i) {
     // create new button for each choice
-    var choiceNode = document.createElement("button");
+    let choiceNode = document.createElement("button");
     choiceNode.setAttribute("class", "choice");
     choiceNode.setAttribute("value", choice);
 
@@ -74,6 +95,7 @@ function questionClick() {
     feedbackEl.textContent = "Correct!";
     feedbackEl.style.color = "green";
     feedbackEl.style.fontSize = "400%";
+    score++;
   }
 
   // flash right/wrong feedback
@@ -87,13 +109,13 @@ function questionClick() {
 
   // time checker
   if (currentQuestionIndex === questions.length) {
-    quizEnd();
+    endQuiz();
   } else {
     getQuestion();
   }
 }
 
-function quizEnd() {
+function endQuiz() {
   // stop timer
   clearInterval(timerId);
 
@@ -103,7 +125,7 @@ function quizEnd() {
 
   // show final score
   var finalScoreEl = document.getElementById("final-score");
-  finalScoreEl.textContent = time;
+  finalScoreEl.textContent = score;
   // change time to correct answers
 
   // hide questions section
@@ -117,22 +139,22 @@ function clockTick() {
 
   // check if user ran out of time
   if (time <= 0) {
-    quizEnd();
+    endQuiz();
   }
 }
 
 function saveHighscore() {
   // get value of input box
-  var initials = initialsEl.value.trim();
+  let initials = initialsEl.value.trim();
 
   if (initials !== "") {
     // get saved scores from localstorage, or if not any, set to empty array
-    var highscores =
+    let highscores =
       JSON.parse(window.localStorage.getItem("highscores")) || [];
 
     // format new score object for current user
-    var newScore = {
-      score: time,
+    let newScore = {
+      score: score,
       initials: initials
     };
 
@@ -142,6 +164,8 @@ function saveHighscore() {
 
     // redirect to next page
     window.location.href = "highscore.html";
+    // document.getElementById('end-screen').style.display='none';
+    // document.getElementById('scores-page').style.display='block';
   }
 }
 
@@ -160,32 +184,38 @@ startBtn.onclick = startQuiz;
 
 initialsEl.onkeyup = checkForEnter;
 
-function printHighscores() {
-    // either get scores from localstorage or set to empty array
-    var highscores = JSON.parse(window.localStorage.getItem("highscores")) || [];
+// let highScorePage = document.getElementById('scores-page');
+// highScorePage.addEventListener('click', printHighscores());
+
+//   function printHighscores() {
+// // either get scores from localstorage or set to empty array
+//   let highscores = JSON.parse(window.localStorage.getItem("highscores")) || [];
   
-    // sort highscores by score property in descending order
-    highscores.sort(function(a, b) {
-      return b.score - a.score;
-    });
+// // sort highscores by score property in descending order
+//   highscores.sort(function(a, b) {
+//     return b.score - a.score;
+//   });
+      
+//   highscores.forEach(function(score) {
+// // create li tag for each high score
+//     let liTag = document.createElement("li");
+//     liTag.textContent = score.initials + " - " + score.score;
   
-    highscores.forEach(function(score) {
-      // create li tag for each high score
-      var liTag = document.createElement("li");
-      liTag.textContent = score.initials + " - " + score.score;
+// // display on page
+//     let olEl = document.getElementById("highscores");
+//     olEl.appendChild(liTag);
+//    });
+//   }
   
-      // display on page
-      var olEl = document.getElementById("highscores");
-      olEl.appendChild(liTag);
-    });
-  }
+//   function clearHighscores() {
+//     window.localStorage.removeItem("scores");
+//     window.location.reload();
+//   }
   
-  function clearHighscores() {
-    window.localStorage.removeItem("highscores");
-    window.location.reload();
-  }
-  
-  document.getElementById("clear").onclick = clearHighscores;
-  
-  // run function when page loads
-  printHighscores();
+//  // clears highscores
+//   let clearScores = document.getElementById("clear");
+//   clearScores.addEventListener('click', clearHighscores());
+
+// // run function when page loads
+// printHighscores();
+

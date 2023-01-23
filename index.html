@@ -12,11 +12,19 @@
 </head>
 
 <body>
-    <div class="scores"><a href="highscore.html">View Highscores</a></div>
+      <div class="scores"><a href="highscore.html">View Highscores</a></div>
+
+      <!-- <div id="scores-page" class="hide">
+        <h1>Highscores</h1>
+       <ol id="highscores"></ol>
+
+      <button>Go Back</button>
+        <button id="clear">Clear Highscores</button>
+      </div> -->
 
     <div class="timer">Time: <span id="time">0</span></div>
 
-    <div class="wrapper">
+    <div id="header">
         <div id="start-screen" class="start">
         <h1>Welcome to the Code Quiz!</h1>
         <p>Ready to test your coding knowledge? Press START to begin the quiz, and answer as many questions as possible. Correct answers will award ONE point and incorrect answers
@@ -31,7 +39,7 @@
       </div>
 
       <div id="end-screen" class="hide">
-        <h2>All done!</h2>
+        <h2>Finish!</h2>
         <p>Your final score is <span id="final-score"></span>.</p>
         <p>
           Enter initials: <input type="text" id="initials" max="3" />
@@ -42,7 +50,6 @@
       <div id="feedback" class="feedback hide"></div>
     </div>
     
-    <script src="./assets/js/questions.js"></script>
     <script src="./Assets/js/script.js"></script>
 </body>
 

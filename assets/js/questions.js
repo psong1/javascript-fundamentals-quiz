@@ -1,19 +1,31 @@
-let questions = [
-    {
-        title: 'How many day are there in a year?',
-        choices: ['24', '365', '52', '12'],
-        answer: '365'
-    },
-
-    {
-        title: 'What is the capital of Georgia?',
-        choices: ['Atlanta', 'Macon', 'Miami', 'Seattle'],
-        answer: 'Atlanta'
-    },
-
-    {
-        title: 'test question',
-        choices: ['a', 'b', 'c', 'd'],
-        answer: 'a' 
-    }
-]
+function printHighscores() {
+    // either get scores from localstorage or set to empty array
+      let highscores = JSON.parse(window.localStorage.getItem("highscores")) || [];
+      
+    // sort highscores by score property in descending order
+      highscores.sort(function(a, b) {
+        return b.score - a.score;
+      });
+          
+      highscores.forEach(function(score) {
+    // create li tag for each high score
+        let liTag = document.createElement("li");
+        liTag.textContent = score.initials + " - " + score.score;
+      
+    // display on page
+        let olEl = document.getElementById("highscores");
+        olEl.appendChild(liTag);
+       });
+      }
+      
+function clearHighscores() {
+    window.localStorage.removeItem("scores");
+    window.location.reload();
+      }
+      
+     // clears highscores
+     document.getElementById("clear").onclick = clearHighscores;
+    
+    // run function when page loads
+    printHighscores();
+    
