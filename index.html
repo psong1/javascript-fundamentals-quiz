@@ -12,36 +12,37 @@
 </head>
 
 <body>
-    <header>
-        <div id="score-keeper" class="score-keeper">View Highscores</div>
+    <div class="scores"><a href="score.html">View Highscores</a></div>
 
-        <div id="timer" class="timer">Time:</div>
-        <div id="score" class="hide">Score: </div>
-    </header>
+    <div class="timer">Time: <span id="time">0</span></div>
 
-    <div id="intro" class="intro-screen">
+    <div class="wrapper">
+        <div id="start-screen" class="start">
         <h1>Welcome to the Code Quiz!</h1>
         <p>Ready to test your coding knowledge? Press START to begin the quiz, and answer as many questions as possible. Correct answers will award ONE point and incorrect answers
-            will deduct 10 seconds from the timer.
+            will deduct 5 seconds from the timer.
         </p>
         <button id="start">START</button>
     </div>
 
-    <div id="question-answer">
-        <h2 id="question" class="question"></h2>
-        <div id="answers" class="answers"></div>
+    <div id="questions" class="hide">
+        <h2 id="question-title"></h2>
+        <div id="choices" class="choices"></div>
+      </div>
+
+      <div id="end-screen" class="hide">
+        <h2>All done!</h2>
+        <p>Your final score is <span id="final-score"></span>.</p>
+        <p>
+          Enter initials: <input type="text" id="initials" max="3" />
+          <button id="submit">Submit</button>
+        </p>
+      </div>
+
+      <div id="feedback" class="feedback hide"></div>
     </div>
-
-    <div id="feedback"></div>
-
-    <div id="finish" class="hide">
-        <h2>Time's Up!</h2>
-        <div id="final"></div>
-        <div id="initials">
-            <button id="submit">SUBMIT</button>
-        </div>
-    </div>
-
+    
+    <script src="./assets/js/questions.js"></script>
     <script src="./Assets/js/script.js"></script>
 </body>
 
