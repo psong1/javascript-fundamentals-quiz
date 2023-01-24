@@ -8,27 +8,45 @@ let feedbackEl = document.querySelector("#feedback");
 
 let questions = [
   {
-      title: 'How many day are there in a year?',
-      choices: ['24', '365', '52', '12'],
-      answer: '365'
+    title: 'What are template literal enclosed with?',
+    choices: ['parentheses', 'backticks', 'brackets', 'semi-colons'],
+    answer: 'backticks'
   },
 
   {
-      title: 'What is the capital of Georgia?',
-      choices: ['Atlanta', 'Macon', 'Miami', 'Seattle'],
-      answer: 'Atlanta'
+    title: 'Which of the following are logical operators?',
+    choices: ['&& and', '|| or', '! not', 'All of the above'],
+    answer: 'All of the above'
   },
 
   {
-      title: 'test question',
-      choices: ['a', 'b', 'c', 'd'],
-      answer: 'a' 
-  }
+    title: 'True or False: The z-index indicates how far back or how far forward an element appears on the page.',
+    choices: ['True', 'False',],
+    answer: 'True' 
+  },
+
+  {
+    title: 'Which of the following is not a property of the box model?',
+    choices: ['margin', 'float', 'padding', 'border'],
+    answer: 'float'
+  },
+
+  {
+    title: 'Which type of breadcrumb trail is the following example: "Pineapple: Yellow Large"',
+    choices: ['Path-based', 'Attribute-based', 'URL-based', 'Location-based'],
+    answer: 'Attribute-based'
+  },
+
+  {
+    title: 'What method is used to help debug code in Javascript?',
+    choices: ['Math.random()', 'Array.prototype.push()', 'console.log()', 'Math.floor()'],
+    answer: 'console.log()'
+  },
 ]
 
 // quiz state variables
 let currentQuestionIndex = 0;
-let time = questions.length * 15;
+let time = questions.length * 10;
 let timerId;
 let score = 0;
 
