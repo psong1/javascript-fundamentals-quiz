@@ -12,15 +12,7 @@
 </head>
 
 <body>
-      <div class="scores"><a href="highscore.html">View Highscores</a></div>
-
-      <!-- <div id="scores-page" class="hide">
-        <h1>Highscores</h1>
-       <ol id="highscores"></ol>
-
-      <button>Go Back</button>
-        <button id="clear">Clear Highscores</button>
-      </div> -->
+      <div><a class="scores" href="highscore.html">View Highscores</a></div>
 
     <div class="timer">Time: <span id="time">0</span></div>
 
@@ -33,24 +25,24 @@
         <button id="start">START</button>
     </div>
 
-    <div id="questions" class="hide">
-        <h2 id="question-title"></h2>
-        <div id="choices" class="choices"></div>
+    <div id="questionBlock" class="hide">
+        <h2 id="question" class="question"></h2>
+        <div id="options" class="options"></div>
       </div>
 
       <div id="end-screen" class="hide">
         <h2>Finish!</h2>
         <p>Your final score is <span id="final-score"></span>.</p>
         <p>
-          Enter initials: <input type="text" id="initials" max="3" />
+          Enter initials: <input type="text" id="initials"/>
           <button id="submit">Submit</button>
         </p>
       </div>
 
-      <div id="feedback" class="feedback hide"></div>
+      <div id="feedback"></div>
     </div>
     
-    <script src="./Assets/js/script.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 
 </html>

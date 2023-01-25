@@ -2,10 +2,15 @@
     font-family: 'Jura', sans-serif;
 }
 
-.intro-screen {
+.header {
     margin: 100px auto 0 auto;
-    max-width: 700px;
+    max-width: 600px;
     text-align: center;
+}
+
+.start {
+    text-align: center;
+    margin-top: 15%;;
 }
 
 .hide {
@@ -26,6 +31,20 @@
     right: 15px;
     font-weight: 700;
     font-size: 1.2rem;
+}
+
+.scores {
+    text-decoration: none;
+}
+
+#questionBlock {
+    text-align: center;
+    margin-top: 100px;
+    font-size: 32px;
+}
+
+h1 {
+    font-size: 40px;
 }
 
 button {
