@@ -21,4 +21,3 @@ Example of High Score saved in Local Storage
 
 ## Link to Deployed Page
 
-https://psong1.github.io/web-api-code-quiz/index.html
