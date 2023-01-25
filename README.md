@@ -1,4 +1,4 @@
-# Web APIs: Code Quiz
+# Javascript Fundamentals Quiz
 
 ## Description
 
