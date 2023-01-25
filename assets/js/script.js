@@ -22,21 +22,21 @@ let questionsArr = [
   },
 
   {
-    question: 'True or False: The z-index indicates how far back or how far forward an element appears on the page.',
+    question: 'True or False: "EventTarget.addEventListener" registers an event handler of a specific event to the EventTarget.',
     options: ['True', 'False',],
     answer: 'True' 
   },
 
   {
-    question: 'Which of the following is not a property of the box model?',
-    options: ['margin', 'float', 'padding', 'border'],
-    answer: 'float'
+    question: 'The Document Object Model (DOM) represents a document with a(n):',
+    options: ['logical tree', 'event handler', 'script.js', 'text encoder'],
+    answer: 'logical tree'
   },
 
   {
-    question: 'Which type of breadcrumb trail is the following example: "Pineapple: Yellow Large"',
-    options: ['Path-based', 'Attribute-based', 'URL-based', 'Location-based'],
-    answer: 'Attribute-based'
+    question: 'Which of the following declarations cannot be changed through reassignment?"',
+    options: ['let', 'var', 'const', 'None of the above'],
+    answer: 'const'
   },
 
   {
@@ -46,7 +46,7 @@ let questionsArr = [
   },
 
   {
-    question: 'True or False: the "!important" flag will override any style.',
+    question: 'True or False: the "getter" binds an object property to a function that will be called when that property is looked up.',
     options: ['True', 'False'],
     answer: 'True'
   },
